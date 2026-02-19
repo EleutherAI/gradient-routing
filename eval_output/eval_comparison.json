@@ -1,0 +1,347 @@
+{
+  "pretrained_baseline": {
+    "label": "Pretrained baseline",
+    "validation_loss": {
+      "forget": 1.2014,
+      "retain": 1.2727
+    },
+    "generation": {
+      "total_target_words": 12,
+      "mean_target_words": 1.5,
+      "mean_repetition_ratio": 0.034
+    },
+    "generation_samples": [
+      {
+        "prompt": "Once upon a time, Timmy went to the forest",
+        "target_words": 4,
+        "generated_length": 770,
+        "repetition_ratio": 0.046052631578947345,
+        "generated_text": "Once upon a time, Timmy went to the forest to find a new adventure. He walked and walked until he found a big rock. \"This is a good place to sit,\" said Timmy. He sat on the rock and looked around. \"Wow, this is a nice place,\" said Timmy. \n\nSuddenly, he saw a little bird. \"Hello little bird, do you want to come sit on the rock with me?\" asked Timmy. \"Yes please!\" said the bird. They sat on the rock"
+      },
+      {
+        "prompt": "Once upon a time, there was a little girl named Lily",
+        "target_words": 0,
+        "generated_length": 552,
+        "repetition_ratio": 0.009615384615384581,
+        "generated_text": "Once upon a time, there was a little girl named Lily. She loved to eat spaghetti with a fork. One day, her mom made her spaghetti, but it tasted weird. Lily didn't like it at all. She shrugged her shoulders and said, \"I don't want to eat this.\" \n\nHer dad asked her what was wrong, and Lily told him about the weird spaghetti. Her dad said he was sorry and promised to make her a new, better one. Lily"
+      },
+      {
+        "prompt": "One day, a boy went for a walk in the",
+        "target_words": 2,
+        "generated_length": 702,
+        "repetition_ratio": 0.050000000000000044,
+        "generated_text": "One day, a boy went for a walk in the woods. He saw a big tree with a hole in it. He looked inside and saw a small, sad squirrel. The squirrel was cold and hungry. The boy felt sorry for the squirrel and wanted to help.\n\nThe boy called his mom and said, \"Mom, can we give the squirrel some food?\" His mom said, \"Yes, let's find some nuts for the squirrel to eat.\" They went to the store and bought so"
+      },
+      {
+        "prompt": "The little bear lived in the",
+        "target_words": 3,
+        "generated_length": 603,
+        "repetition_ratio": 0.10655737704918034,
+        "generated_text": "The little bear lived in the forest. He was very scared. He saw a big tree and wanted to climb it, but he was too small. He looked around and found a big log. He had an idea.\n\nThe little bear sat on the log and started to climb. He was happy. He climbed higher and higher. But then, he saw a big bird. The big bird was flying and looked angry. The little bear was scared.\n\nThe big bird saw the little"
+      },
+      {
+        "prompt": "Once upon a time, there was a big",
+        "target_words": 0,
+        "generated_length": 660,
+        "repetition_ratio": 0.008000000000000007,
+        "generated_text": "Once upon a time, there was a big, fat cat named Kitty. Kitty loved to eat tuna. Every day, she would eat tuna in the morning, noon, and then sleep all day in her bowl. \n\nOne day, Kitty saw a little mouse named Squeaky. Squeaky was very hungry, so Kitty wanted to help. Kitty said, \"I will feed you, but first, you must eat your tuna.\" Squeaky was very happy and said, \"Thank you, Kitty!\"\n\nKitty went"
+      },
+      {
+        "prompt": "Tom liked to climb",
+        "target_words": 1,
+        "generated_length": 540,
+        "repetition_ratio": 0.009090909090909038,
+        "generated_text": "Tom liked to climb. He climbed trees, he climbed rocks, he climbed the hills. One day, Tom found a big board near the river. It was a surf board. Tom was very happy.\n\nTom wanted to try the surf board. He dragged it to the water. He put the board on the water. Tom jumped on the board and started to ride. The board was very good. Tom rode the surf board all day.\n\nLater, Tom felt a little tired. He k"
+      },
+      {
+        "prompt": "The animals gathered near the",
+        "target_words": 1,
+        "generated_length": 498,
+        "repetition_ratio": 0.021276595744680882,
+        "generated_text": "The animals gathered near the tree. They saw a big, red ball on the ground. They wanted to play with the ball. They all looked at each other. They were very alert. They knew that if they pushed the ball with their noses, it would roll away.\n\nThe animals tried to push the ball. They pushed and pushed. The ball rolled away very fast. The animals chased it. They were so happy. They played with the ba"
+      },
+      {
+        "prompt": "Lily saw a pretty bird sitting on a",
+        "target_words": 1,
+        "generated_length": 562,
+        "repetition_ratio": 0.01941747572815533,
+        "generated_text": "Lily saw a pretty bird sitting on a tree. She wanted to say hello to the bird. So, she tried to whistle like the bird. She made a funny noise that made the bird laugh.\n\nLily's friend, Tim, came to play. He saw Lily whistling and asked, \"What are you doing?\" Lily said, \"I am whistling. Do you want to try?\" Tim tried to whistle too, but he was not very good.\n\nLily and Tim practiced whistling togethe"
+      }
+    ]
+  },
+  "from_scratch_fullseq": {
+    "label": "From-scratch (full_seq)",
+    "config": {
+      "masking_scheme": "full_seq",
+      "training": "from_scratch"
+    },
+    "training_losses": {
+      "pre_ablation": {
+        "forget_loss": 1.4679316282272339,
+        "retain_loss": 1.5644601583480835
+      },
+      "post_ablation": {
+        "forget_loss": 3.2472310066223145,
+        "retain_loss": 2.023167848587036
+      }
+    },
+    "validation_loss": {
+      "forget": 3.3227,
+      "retain": 2.088
+    },
+    "generation": {
+      "total_target_words": 1,
+      "mean_target_words": 0.12,
+      "mean_repetition_ratio": 0.046
+    },
+    "activation_selectivity": {
+      "layer_0": {
+        "forget_orig_mean": 0.2126,
+        "forget_expand_mean": 0.2623,
+        "retain_orig_mean": 0.0682,
+        "retain_expand_mean": 0.0877,
+        "forget_retain_ratio": 2.99
+      },
+      "layer_1": {
+        "forget_orig_mean": 0.1686,
+        "forget_expand_mean": 0.1211,
+        "retain_orig_mean": 0.0392,
+        "retain_expand_mean": 0.0344,
+        "forget_retain_ratio": 3.53
+      },
+      "layer_2": {
+        "forget_orig_mean": 0.0504,
+        "forget_expand_mean": 0.0564,
+        "retain_orig_mean": 0.0263,
+        "retain_expand_mean": 0.0349,
+        "forget_retain_ratio": 1.62
+      },
+      "layer_3": {
+        "forget_orig_mean": 0.0501,
+        "forget_expand_mean": 0.06,
+        "retain_orig_mean": 0.0298,
+        "retain_expand_mean": 0.0436,
+        "forget_retain_ratio": 1.38
+      },
+      "layer_4": {
+        "forget_orig_mean": 0.0718,
+        "forget_expand_mean": 0.0389,
+        "retain_orig_mean": 0.0254,
+        "retain_expand_mean": 0.0309,
+        "forget_retain_ratio": 1.26
+      }
+    },
+    "generation_samples": [
+      {
+        "prompt": "Once upon a time, Timmy went to the forest",
+        "target_words": 1,
+        "generated_length": 836,
+        "repetition_ratio": 0.11351351351351346,
+        "generated_text": "Once upon a time, Timmy went to the forest to no there was a not to what to go to ask, there was a no to that it was a not to play a even a not to there he he knew he wanted to surprise, he wanted to play a not they wanted to play surprise for a not to play a even sad his ask, there was a she was something she was it was there was a no surprise, she did something to take, to try to try to try to p"
+      },
+      {
+        "prompt": "Once upon a time, there was a little girl named Lily",
+        "target_words": 0,
+        "generated_length": 846,
+        "repetition_ratio": 0.0060240963855421326,
+        "generated_text": "Once upon a time, there was a little girl named Lily. She loved to play outside with her friends. One day, they decided to play a game to see who could jump the fastest. The game was to have a game where they could jump very high.\nLily and her friends ran to the park. They jumped high and laughed as they jumped. But then, they saw a. \"Oh no!\" said Lily. \"We need to clean this game!\" They all laugh"
+      },
+      {
+        "prompt": "One day, a boy went for a walk in the",
+        "target_words": 0,
+        "generated_length": 755,
+        "repetition_ratio": 0.04216867469879515,
+        "generated_text": "One day, a boy went for a walk in the not to see a said, he couldn't to take a day, he was a his friend was a next to take his best friend, he was a his friend was there was ready girl, \"I was a His name was on the icky was on her name was there was his name was her. He asked her, \"What do you think I do with you?\" \nHer friend replied, \"I think you are doing great. I'm going to take the way home. "
+      },
+      {
+        "prompt": "The little bear lived in the",
+        "target_words": 0,
+        "generated_length": 812,
+        "repetition_ratio": 0.051724137931034475,
+        "generated_text": "The little bear lived in the just for a while he was there was on he could not a his new made a mom was a little boy, he was there he wanted to take a surprise to see an idea. He could not sure, he was a little bit scared.\nBut then he heard a voice. It was his dad, who was in the \n\"We're here to clean up!\" they said. \nThe little bear was very excited. He wanted to keep up the last night so he woul"
+      },
+      {
+        "prompt": "Once upon a time, there was a big",
+        "target_words": 0,
+        "generated_length": 749,
+        "repetition_ratio": 0.006451612903225823,
+        "generated_text": "Once upon a time, there was a big not a boy, he was a brother his sister, a sister's mommy and friend to play a surprise, he could take a sister had a big! She was a sister said, she was a big, a question, they had a surprise, she said, \"I'm I am very big, I'm going to bea.\" \nThe boy said, \"Let's go and see.\"\nThe sister said, \"No! I have to go with you!\" The mum said, \"Don't be very silly!\" So the"
+      },
+      {
+        "prompt": "Tom liked to climb",
+        "target_words": 0,
+        "generated_length": 798,
+        "repetition_ratio": 0.07954545454545459,
+        "generated_text": "Tom liked to climb not not not both there was there was there was a not, there was to not to which, he wanted to not to not to the But he wanted to the. He wanted to have to. He wanted to play to play with his new to do not to play there was a minute, he wanted to. The next to. He was a to him to his friends were there was to play was there was a surprise, he wanted to play.\nTom was a new to play "
+      },
+      {
+        "prompt": "The animals gathered near the",
+        "target_words": 0,
+        "generated_length": 803,
+        "repetition_ratio": 0.0,
+        "generated_text": "The animals gathered near the a Bob and a He was aLumpy little girl, her mom and her daughter, named Lily was playing outside. She was watching theLily was a \n\"Hi, Lily,\" said Mommy and said, \"Would you like to come with me?\"\nThe 3 year old jumped up and started to talk. Lily watched as the She saw made a \"Beep\" sound as she pointed at the sky.\n\"What do you want to do?\" asked Lily.\n\"I want to be l"
+      },
+      {
+        "prompt": "Lily saw a pretty bird sitting on a",
+        "target_words": 0,
+        "generated_length": 829,
+        "repetition_ratio": 0.0674157303370787,
+        "generated_text": "Lily saw a pretty bird sitting on a not to take a not to go to play to play a. She was a much surprise with a Tom was a, she was a his a did a\nThe next to ask, she was a \n\"Where to go to ask, why not to go to go to play there was out to play away. This was a own instead.\nLily was disappointed, but she was determined to help. She went to the kitchen and found some flour, sugar and a cup. She carefu"
+      }
+    ]
+  },
+  "posttrain_fullseq": {
+    "label": "Post-training (full_seq)",
+    "config": {
+      "masking_scheme": "full_seq",
+      "training": "post_training"
+    },
+    "training_losses": {
+      "pre_ablation": {
+        "forget_loss": 1.0864829421043396,
+        "retain_loss": 1.0791699886322021
+      },
+      "post_ablation": {
+        "forget_loss": 1.3459745645523071,
+        "retain_loss": 1.1048822402954102
+      }
+    },
+    "validation_loss": {
+      "forget": 1.3366,
+      "retain": 1.1223
+    },
+    "generation": {
+      "total_target_words": 6,
+      "mean_target_words": 0.75,
+      "mean_repetition_ratio": 0.027
+    },
+    "activation_selectivity": {
+      "layer_0": {
+        "forget_orig_mean": 0.1449,
+        "forget_expand_mean": 0.1036,
+        "retain_orig_mean": 0.1106,
+        "retain_expand_mean": 0.0566,
+        "forget_retain_ratio": 1.83
+      },
+      "layer_1": {
+        "forget_orig_mean": 0.1232,
+        "forget_expand_mean": 0.107,
+        "retain_orig_mean": 0.0934,
+        "retain_expand_mean": 0.0741,
+        "forget_retain_ratio": 1.44
+      },
+      "layer_2": {
+        "forget_orig_mean": 0.1357,
+        "forget_expand_mean": 0.0996,
+        "retain_orig_mean": 0.1095,
+        "retain_expand_mean": 0.0798,
+        "forget_retain_ratio": 1.25
+      },
+      "layer_3": {
+        "forget_orig_mean": 0.1465,
+        "forget_expand_mean": 0.0936,
+        "retain_orig_mean": 0.1169,
+        "retain_expand_mean": 0.075,
+        "forget_retain_ratio": 1.25
+      },
+      "layer_4": {
+        "forget_orig_mean": 0.1475,
+        "forget_expand_mean": 0.0868,
+        "retain_orig_mean": 0.1253,
+        "retain_expand_mean": 0.082,
+        "forget_retain_ratio": 1.06
+      }
+    },
+    "generation_samples": [
+      {
+        "prompt": "Once upon a time, Timmy went to the forest",
+        "target_words": 1,
+        "generated_length": 767,
+        "repetition_ratio": 0.026490066225165587,
+        "generated_text": "Once upon a time, Timmy went to the forest to pick berries. All of his berries were bright and red and look delicious.\nTimmy's mommy said, \"Timmy, listen to me and don't go too far. It's not safe.\"\nBut Timmy wanted to pick the juicy one. He ran away from his mommy and ran into the deep and dark woods.\nTimmy got lost. He started to cry and call, \"Mommy! I want my berries!\" \nBut his mommy was not th"
+      },
+      {
+        "prompt": "Once upon a time, there was a little girl named Lily",
+        "target_words": 0,
+        "generated_length": 887,
+        "repetition_ratio": 0.011363636363636354,
+        "generated_text": "Once upon a time, there was a little girl named Lily. She loved to play outside in the sun. One day, it was very cold and icy outside. Lily put on her warm coat and went out to play.\nAs Lily played, she saw a big under the ground. It was a small, warm place to sit squirrels. She wanted to make friends with the squirrel. So, she picked up a nut and gave it to the squirrel. The squirrel took the nut"
+      },
+      {
+        "prompt": "One day, a boy went for a walk in the",
+        "target_words": 2,
+        "generated_length": 911,
+        "repetition_ratio": 0.028089887640449396,
+        "generated_text": "One day, a boy went for a walk in the forest. It was a peaceful day, and the sun was shining. The little boy saw a pretty stone on the ground. He picked it up and put it in his pocket.\nAs the boy walked, he met a rabbit. The rabbit was hopping around and saw the rabbit. The rabbit said, \"Hi! What do you have in your pocket?\" The rabbit looked at the hole in the ear of the ear. The rabbit was confu"
+      },
+      {
+        "prompt": "The little bear lived in the",
+        "target_words": 1,
+        "generated_length": 841,
+        "repetition_ratio": 0.029585798816568087,
+        "generated_text": "The little bear lived in the forest. He was three years old and very excited to explore the his home.\nHe walked through the large door and saw something strange. It was a door that was locked. He wanted to get inside, so he tried to unlock it.\nHe asked his mommy for help.\n\"Mommy, can you help me unlock this door?\"\n\"Sure, honey,\" his mommy said.\nShe took out a key and unlocked the door.\nThe little "
+      },
+      {
+        "prompt": "Once upon a time, there was a big",
+        "target_words": 0,
+        "generated_length": 818,
+        "repetition_ratio": 0.0117647058823529,
+        "generated_text": "Once upon a time, there was a big a dog named Spot. Spot had a big, rough coat that he loved very much. One day, Spot wanted to go to the park to play. He put on his coat, so it would not get dirty.\nAt the park, Spot met a big dog named Max. Max saw Spot's coat and said, \"Wow, your coat is so rough! Can I have it?\" Spot shook his head and said, \"No, I like my coat. It keeps me warm.\"\nBut then, som"
+      },
+      {
+        "prompt": "Tom liked to climb",
+        "target_words": 1,
+        "generated_length": 799,
+        "repetition_ratio": 0.03529411764705881,
+        "generated_text": "Tom liked to climb. He climbed on chairs, on tables, on his bed, on his chair. He climbed so high that he could see the birds, the clouds, the trees, and the sky. He was happy when he climbed.\nOne day, Tom found a big chair in the kitchen. It was big and soft and had a picture of a cake on it. Tom wanted to climb on the chair and eat the cake. He did not ask his mom or dad. He was naughty.\nHe clim"
+      },
+      {
+        "prompt": "The animals gathered near the",
+        "target_words": 0,
+        "generated_length": 897,
+        "repetition_ratio": 0.06321839080459768,
+        "generated_text": "The animals gathered near the pond. A little ant was walking slowly when she saw something special. It was a big, shiny stone. She wanted to take it home, so she carefully pulled it out of her pocket and carried it to her home.\nThe little ant was feeling happy and excited, but then she noticed something. The stone was in a strange shape, not like the other stones she had seen before. She was a bit"
+      },
+      {
+        "prompt": "Lily saw a pretty bird sitting on a",
+        "target_words": 1,
+        "generated_length": 746,
+        "repetition_ratio": 0.006578947368421018,
+        "generated_text": "Lily saw a pretty bird sitting on a branch. She wanted to fly like the bird. She ran to the bird and tried to climb the tree. But the too high and too rough. She lost her balance and fell down. She hit the on the on the the ground and hurt her knee. She cried out loud.\n\"Are you okay, Lily?\" Mommy asked, coming out of the down the to the up the down. She heard the flute and saw Lily on the flute. S"
+      }
+    ]
+  },
+  "token_routing": {
+    "total_nonrare_tokens": 226,
+    "strongly_routed_count": 1,
+    "moderately_routed_count": 3,
+    "strongly_routed_tokens": [
+      {
+        "token": "tree",
+        "mask_weight": "0.0",
+        "forget_freq_per_10k": 99.4,
+        "retain_freq_per_10k": 0.0
+      }
+    ],
+    "moderately_routed_tokens": [
+      {
+        "token": "bird",
+        "mask_weight": "0.586",
+        "forget_freq_per_10k": 73.1,
+        "retain_freq_per_10k": 18.7
+      },
+      {
+        "token": "flew",
+        "mask_weight": "0.81",
+        "forget_freq_per_10k": 10.3,
+        "retain_freq_per_10k": 3.6
+      },
+      {
+        "token": "bear",
+        "mask_weight": "0.816",
+        "forget_freq_per_10k": 10.9,
+        "retain_freq_per_10k": 3.8
+      }
+    ]
+  }
+}

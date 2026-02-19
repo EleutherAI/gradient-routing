@@ -1,0 +1,75 @@
+Starting TinyStories ERA DRY RUN
+Time: Thu 19 Feb 2026 04:54:30 UTC
+Node: nid011143
+Thu Feb 19 04:54:30 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GH200 120GB             On  |   00000009:01:00.0 Off |                    0 |
+| N/A   35C    P0             95W /  900W |       9MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GH200 120GB             On  |   00000019:01:00.0 Off |                    0 |
+| N/A   36C    P0             92W /  900W |       4MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GH200 120GB             On  |   00000029:01:00.0 Off |                    0 |
+| N/A   36C    P0             95W /  900W |       2MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GH200 120GB             On  |   00000039:01:00.0 Off |                    0 |
+| N/A   36C    P0             86W /  900W |       7MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Training single tinystories_era run on device=device(type='cuda', index=2).
+
+RUN INFO - drag to copy from tmux, then paste into spreadsheet:
+https://docs.google.com/spreadsheets/d/1qcxNo2DAo38kN79Czxj0XQIJ295zwg4aX4SEF3xiejk/
+
+demix_debug_era
+debugging_demix
+Feb 19
+h3b7e9ec74119374c-s0
+dry run
+run type: ERAC / ERAConfig(layers_to_mask=[0, 1, 2, 3, 4], to_expand={'d_mlp': 64}, masking_scheme='full_seq', masking_type='ddbp', expanded_vs_original_dim_learning_rates={'expanded_dim_lr_target': 1.0, 'original_dim_lr_target': -0.75, 'expanded_dim_lr_off_target': 1.0, 'original_dim_lr_off_target': 1.0}, include_conditional_bias_term=False)
+
+  0%|          | 0/1000 [00:00<?, ?it/s]100%|██████████| 1000/1000 [00:00<00:00, 63027.69it/s]
+  0%|          | 0/27516 [00:00<?, ?it/s] 23%|██▎       | 6356/27516 [00:00<00:00, 63551.58it/s] 46%|████▋     | 12792/27516 [00:00<00:00, 64020.58it/s] 70%|███████   | 19309/27516 [00:00<00:00, 64543.72it/s] 94%|█████████▎| 25770/27516 [00:00<00:00, 64566.99it/s]100%|██████████| 27516/27516 [00:00<00:00, 64431.78it/s]
+Getting token frequencies...
+  0%|          | 0/782 [00:00<?, ?it/s] 43%|████▎     | 337/782 [00:00<00:00, 3368.36it/s] 93%|█████████▎| 726/782 [00:00<00:00, 3673.22it/s]100%|██████████| 782/782 [00:00<00:00, 3648.32it/s]
+  0%|          | 0/218 [00:00<?, ?it/s]100%|██████████| 218/218 [00:00<00:00, 3551.20it/s]
+Setting up masks
+PHASE ONE: EXPAND AND ROUTE
+  0%|          | 0/13 [00:00<?, ?it/s]  0%|          | 0/13 [00:00<?, ?it/s, loss=11.1]  8%|▊         | 1/13 [00:01<00:13,  1.11s/it, loss=11.1]  8%|▊         | 1/13 [00:01<00:13,  1.11s/it, loss=11.1] 15%|█▌        | 2/13 [00:01<00:06,  1.61it/s, loss=11.1] 15%|█▌        | 2/13 [00:01<00:06,  1.61it/s, loss=11.1] 23%|██▎       | 3/13 [00:01<00:04,  2.14it/s, loss=11.1] 23%|██▎       | 3/13 [00:01<00:04,  2.14it/s, loss=10.9] 31%|███       | 4/13 [00:01<00:03,  2.54it/s, loss=10.9] 31%|███       | 4/13 [00:02<00:03,  2.54it/s, loss=10.8] 38%|███▊      | 5/13 [00:02<00:02,  2.83it/s, loss=10.8] 38%|███▊      | 5/13 [00:02<00:02,  2.83it/s, loss=10.6] 46%|████▌     | 6/13 [00:02<00:02,  3.04it/s, loss=10.6] 46%|████▌     | 6/13 [00:02<00:02,  3.04it/s, loss=10.4] 54%|█████▍    | 7/13 [00:02<00:01,  3.18it/s, loss=10.4] 54%|█████▍    | 7/13 [00:03<00:01,  3.18it/s, loss=10.2] 62%|██████▏   | 8/13 [00:03<00:01,  3.30it/s, loss=10.2] 62%|██████▏   | 8/13 [00:03<00:01,  3.30it/s, loss=9.97] 69%|██████▉   | 9/13 [00:03<00:01,  2.46it/s, loss=9.97] 69%|██████▉   | 9/13 [00:03<00:01,  2.46it/s, loss=9.82] 77%|███████▋  | 10/13 [00:03<00:01,  2.71it/s, loss=9.82] 77%|███████▋  | 10/13 [00:04<00:01,  2.71it/s, loss=9.61] 85%|████████▍ | 11/13 [00:04<00:00,  2.92it/s, loss=9.61] 85%|████████▍ | 11/13 [00:04<00:00,  2.92it/s, loss=9.5]  92%|█████████▏| 12/13 [00:04<00:00,  3.09it/s, loss=9.5] 92%|█████████▏| 12/13 [00:04<00:00,  3.09it/s, loss=9.42]100%|██████████| 13/13 [00:04<00:00,  3.71it/s, loss=9.42]100%|██████████| 13/13 [00:04<00:00,  2.76it/s, loss=9.42]
+Model saved to debugging_demix/demix_debug_era_pre_ablation.pt.
+PHASE TWO: COHERENCE TRAINING
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Best coherence training loss 9.243 achieved at step 0.
+Model saved to debugging_demix/demix_debug_era.pt.
+PHASE THREE: RETRAINING
+Traceback (most recent call last):
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/tinystories_era.py", line 873, in <module>
+    res_df = do_era_training_run(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/tinystories_era.py", line 784, in do_era_training_run
+    figs, res_df = run_retrain_evals(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/retraining_evals.py", line 253, in run_retrain_evals
+    test_retain_stories = random.sample(retain_stories, cfg.test_retain_stories)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/random.py", line 456, in sample
+    raise ValueError("Sample larger than population or is negative")
+ValueError: Sample larger than population or is negative
+Dry run done: Thu 19 Feb 2026 04:55:03 UTC

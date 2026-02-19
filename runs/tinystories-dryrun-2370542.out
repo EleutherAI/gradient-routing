@@ -1,0 +1,74 @@
+Starting TinyStories ERA DRY RUN
+Time: Thu 19 Feb 2026 04:53:18 UTC
+Node: nid011143
+Thu Feb 19 04:53:18 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GH200 120GB             On  |   00000009:01:00.0 Off |                    0 |
+| N/A   35C    P0             95W /  900W |       9MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GH200 120GB             On  |   00000019:01:00.0 Off |                    0 |
+| N/A   36C    P0             93W /  900W |       4MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GH200 120GB             On  |   00000029:01:00.0 Off |                    0 |
+| N/A   36C    P0             95W /  900W |       2MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GH200 120GB             On  |   00000039:01:00.0 Off |                    0 |
+| N/A   36C    P0             86W /  900W |       7MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Training single tinystories_era run on device=device(type='cuda', index=2).
+
+RUN INFO - drag to copy from tmux, then paste into spreadsheet:
+https://docs.google.com/spreadsheets/d/1qcxNo2DAo38kN79Czxj0XQIJ295zwg4aX4SEF3xiejk/
+
+demix_debug_era
+debugging_demix
+Feb 19
+h3b7e9ec74119374c-s0
+dry run
+run type: ERAC / ERAConfig(layers_to_mask=[0, 1, 2, 3, 4], to_expand={'d_mlp': 64}, masking_scheme='full_seq', masking_type='ddbp', expanded_vs_original_dim_learning_rates={'expanded_dim_lr_target': 1.0, 'original_dim_lr_target': -0.75, 'expanded_dim_lr_off_target': 1.0, 'original_dim_lr_off_target': 1.0}, include_conditional_bias_term=False)
+
+Traceback (most recent call last):
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/tinystories_era.py", line 873, in <module>
+    res_df = do_era_training_run(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/tinystories_era.py", line 233, in do_era_training_run
+    old_model = HookedTransformer(config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/transformer_lens/HookedTransformer.py", line 210, in __init__
+    self.move_model_modules_to_device()
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/transformer_lens/HookedTransformer.py", line 1043, in move_model_modules_to_device
+    self.embed.to(devices.get_device_for_block_index(0, self.cfg))
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1381, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/torch/nn/modules/module.py", line 964, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1367, in convert
+    return t.to(
+           ^^^^^
+torch.AcceleratorError: CUDA error: invalid device ordinal
+GPU device may be out of range, do you have enough GPUs?
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Dry run done: Thu 19 Feb 2026 04:53:40 UTC

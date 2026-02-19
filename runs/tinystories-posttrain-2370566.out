@@ -1,0 +1,56 @@
+Starting post-training ERA gradient routing experiment
+Time: Thu 19 Feb 2026 05:27:26 UTC
+Node: nid010532
+Thu Feb 19 05:27:26 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GH200 120GB             On  |   00000009:01:00.0 Off |                    0 |
+| N/A   35C    P0             96W /  900W |       5MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GH200 120GB             On  |   00000019:01:00.0 Off |                    0 |
+| N/A   35C    P0             87W /  900W |       3MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GH200 120GB             On  |   00000029:01:00.0 Off |                    0 |
+| N/A   35C    P0             94W /  900W |       4MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GH200 120GB             On  |   00000039:01:00.0 Off |                    0 |
+| N/A   33C    P0             82W /  900W |       3MiB /  97871MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+`torch_dtype` is deprecated! Use `dtype` instead!
+Running post-training ERA on device=device(type='cuda', index=1)
+Loading pretrained roneneldan/TinyStories-28M from HuggingFace...
+Loaded pretrained model roneneldan/TinyStories-28M into HookedTransformer
+Traceback (most recent call last):
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/tinystories_era_posttrain.py", line 41, in <module>
+    save_pretrained_to_store(
+  File "/home/a6a/lucia.a6a/gradient-routing/projects/tinystories/tinystories_era_posttrain.py", line 28, in save_pretrained_to_store
+    model_store.save_model(model, save_subpath)
+  File "/home/a6a/lucia.a6a/gradient-routing/shared_configs/model_store.py", line 53, in save_model
+    t.save(model.state_dict(), MODEL_STORE_PATH / f"{subpath}.pt")
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/torch/serialization.py", line 976, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/torch/serialization.py", line 838, in _open_zipfile_writer
+    return container(name_or_buffer)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a6a/lucia.a6a/miniforge3/envs/gradient-routing/lib/python3.11/site-packages/torch/serialization.py", line 802, in __init__
+    torch._C.PyTorchFileWriter(
+RuntimeError: Parent directory /home/a6a/lucia.a6a/team-shard-filesystem/models/pretrained does not exist.
+Done: Thu 19 Feb 2026 05:27:52 UTC
