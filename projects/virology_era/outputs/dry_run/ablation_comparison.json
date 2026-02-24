@@ -1,0 +1,10 @@
+{
+  "pre_ablation": {
+    "forget_loss": 1.9230653964556181,
+    "retain_loss": 1.913012724656325
+  },
+  "post_ablation": {
+    "forget_loss": 1.9231660549457257,
+    "retain_loss": 1.9132063113726103
+  }
+}
